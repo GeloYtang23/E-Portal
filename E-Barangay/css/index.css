@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+}
+
+/* css/login.css */
+input:focus {
+  outline: 1px solid #6f92f7;
+  outline-offset: 0px;
+  border: 1px solid #6f92f7;
+}
+
+
+
+.left {
+  flex: 1;
+  background-color: #6f92f7;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.left h2 {
+  font-weight: bold;
+}
+
+.left p {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.form-box {
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-box h3 {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.form-box p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.form-box input[type="email"],
+.form-box input[type="password"],
+.modal input[type="email"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-box .actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  gap: 8px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+
+.custom-checkbox .checkmark {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #999;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkmark::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 5px;
+  height: 10px;
+  border: solid #555;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.form-box .actions span a {
+  color: #6f92f7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.form-box button {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #6f92f7;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* --- Modal --- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+.modal .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal button {
+  background-color: #6f92f7;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  width: 100%;
+  cursor: pointer;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border 0.2s;
+}
+
+.modal-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+
+
+
+/* --- password and strength message --- */
+.success-message {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.strength-bar {
+  width: 100%;
+  height: 6px;
+  background-color: #ddd;
+  margin-top: 5px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-line {
+  height: 100%;
+  width: 0%;
+  transition: width 0.5s ease-in-out, background-color 0.3s;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
+/* --- image logo --- */
+.left img {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+.left img {
+  
+  height: auto;
+  animation: pulse 2s ease-in-out infinite; /* Pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1); /* Slightly enlarge */
+    opacity: 0.8; /* Slight fade */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+button[type="submit"] {
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #007bff;
+  color: #ffffff;
+  border-color: #007bff;
+}
+
+
+
+
+
+/* Responsive styles for mobile devices */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left, .right {
+    width: 100%;
+    padding: 1.5rem;
+  }
+
+  .left {
+    text-align: center;
+  }
+
+  .left img {
+    width: 180px;
+  }
+
+  .left h2 {
+    font-size: 1.5rem;
+  }
+
+  .left p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .form-box {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-box p {
+    font-size: 0.9rem;
+  }
+
+  .form-box input,
+  .modal-input,
+  .form-box button {
+    font-size: 0.95rem;
+  }
+
+  .form-box .actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .modal {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .modal h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal button {
+    font-size: 1rem;
+  }
+
+  .modal .close-btn {
+    font-size: 1.5rem;
+  }
+}
